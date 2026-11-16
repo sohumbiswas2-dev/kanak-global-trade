@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Company facts, product categories, divisions and markets live in `src/lib/site.ts`; pages read from it so details change in one place.
+- Shared header, footer and page intro live in `src/components/site/` and are mounted once in `src/routes/__root.tsx`.
+- The quote form has no backend: it composes a `mailto:` email to the company address, so no data is stored.
