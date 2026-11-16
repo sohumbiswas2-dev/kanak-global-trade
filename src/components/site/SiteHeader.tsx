@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 import { ChevronDown, Menu, Phone, Mail } from "lucide-react";
 import { useState } from "react";
 
@@ -39,6 +39,7 @@ function LogoPlaceholder() {
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
+  const onProducts = useLocation({ select: (l) => l.pathname.startsWith("/products") });
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
@@ -64,7 +65,9 @@ export function SiteHeader() {
             About
           </Link>
           <DropdownMenu>
-            <DropdownMenuTrigger className={`${navLink} flex items-center gap-1 outline-none`}>
+            <DropdownMenuTrigger
+              className={`${navLink} flex items-center gap-1 outline-none ${onProducts ? "text-primary" : ""}`}
+            >
               Products <ChevronDown className="h-4 w-4" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="w-72 p-2">
