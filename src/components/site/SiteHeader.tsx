@@ -11,27 +11,23 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import logoAsset from "@/assets/kanak-industries-logo.png.asset.json";
 import { categories, company } from "@/lib/site";
 
 const navLink =
   "px-3 py-2 text-[0.95rem] font-medium text-foreground/80 transition-colors hover:text-primary";
 const navActive = { className: "text-primary" };
 
-function LogoPlaceholder() {
-  // Replace this block with the real logo image.
+function SiteLogo() {
   return (
-    <Link to="/" className="flex items-center gap-3" aria-label={`${company.name} home`}>
-      <span className="flex h-10 w-10 items-center justify-center rounded-sm border-2 border-dashed border-primary/60 text-[0.6rem] font-bold uppercase tracking-wider text-primary">
-        Logo
-      </span>
-      <span className="leading-tight">
-        <span className="block font-display text-base font-extrabold tracking-tight text-charcoal">
-          KANAK INDUSTRIES
-        </span>
-        <span className="block text-[0.7rem] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-          FZCO · Dubai
-        </span>
-      </span>
+    <Link to="/" className="flex items-center" aria-label={`${company.name} home`}>
+      <img
+        src={logoAsset.url}
+        alt={company.name}
+        width={64}
+        height={64}
+        className="h-16 w-16 object-contain"
+      />
     </Link>
   );
 }
@@ -55,7 +51,7 @@ export function SiteHeader() {
       </div>
 
       <div className="container-site flex h-18 items-center justify-between gap-4 py-3">
-        <LogoPlaceholder />
+        <SiteLogo />
 
         <nav className="hidden items-center lg:flex" aria-label="Main">
           <Link to="/" className={navLink} activeProps={navActive} activeOptions={{ exact: true }}>

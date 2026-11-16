@@ -73,16 +73,19 @@ export const divisions = [
     title: "Steel & Metallurgical Materials",
     body: "Steel products, refractory materials and metal alloys for construction, foundries and heavy industry.",
     items: ["Steel & basic steel products", "Refractory materials", "Metal alloys"],
+    image: steel,
   },
   {
     title: "Industrial Plant Equipment & Spare Parts",
     body: "Sourcing of plant machinery and the spare parts that keep operations running.",
     items: ["Plant equipment", "Mechanical spares", "Replacement components"],
+    image: plant,
   },
   {
     title: "Fluid-Control, Electrical & Coffee",
     body: "Pumps, engines and valves, electrical fittings, and green coffee for trade buyers.",
     items: ["Pumps, engines & valves", "Electrical fittings", "Coffee"],
+    image: pumps,
   },
 ];
 

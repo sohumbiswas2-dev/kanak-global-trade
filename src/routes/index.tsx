@@ -105,7 +105,7 @@ function Index() {
         <div className="container-site">
           <p className="eyebrow">Business divisions</p>
           <h2 className="mt-3 max-w-2xl text-3xl font-extrabold text-charcoal md:text-4xl">
-            Three focused divisions
+            Our focused divisions
           </h2>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {divisions.map((d, i) => {
@@ -113,19 +113,29 @@ function Index() {
               return (
                 <article
                   key={d.title}
-                  className="flex flex-col rounded-lg border border-border bg-card p-8 shadow-card"
+                  className="group relative isolate flex flex-col overflow-hidden rounded-lg border border-border bg-charcoal p-8 shadow-card"
                 >
+                  <img
+                    src={d.image}
+                    alt=""
+                    loading="lazy"
+                    width={1024}
+                    height={768}
+                    className="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 -z-10 bg-charcoal/60" />
+                  <div className="absolute inset-0 -z-10 bg-card-overlay" />
                   <div className="flex items-center justify-between">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-md bg-accent text-primary">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-md bg-background/90 text-primary">
                       <Icon className="h-6 w-6" />
                     </span>
-                    <span className="font-display text-sm font-bold text-muted-foreground">0{i + 1}</span>
+                    <span className="font-display text-sm font-bold text-charcoal-foreground/75">0{i + 1}</span>
                   </div>
-                  <h3 className="mt-6 text-xl font-bold text-charcoal">{d.title}</h3>
-                  <p className="mt-3 leading-relaxed text-muted-foreground">{d.body}</p>
-                  <ul className="mt-6 space-y-2 border-t border-border pt-5 text-sm">
+                  <h3 className="mt-6 text-xl font-bold text-charcoal-foreground">{d.title}</h3>
+                  <p className="mt-3 leading-relaxed text-charcoal-foreground/85">{d.body}</p>
+                  <ul className="mt-6 space-y-2 border-t border-charcoal-foreground/20 pt-5 text-sm">
                     {d.items.map((item) => (
-                      <li key={item} className="flex items-center gap-2 text-foreground">
+                      <li key={item} className="flex items-center gap-2 text-charcoal-foreground">
                         <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                         {item}
                       </li>
