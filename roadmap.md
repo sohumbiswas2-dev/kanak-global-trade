@@ -8,3 +8,4 @@
 - [x] Replace the Metal Alloys description.
 - [x] Use green coffee bean and silver/bronze ingot images.
 - [x] Verify on desktop and mobile.
+- [x] Add office landline +971 4 558 2958 beside the mobile everywhere phone details appear (mobile first, both clickable, WhatsApp stays mobile-only, JSON-LD telephone array).
